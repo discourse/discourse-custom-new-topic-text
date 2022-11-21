@@ -1,0 +1,6 @@
+newtopic_override_texts:
+  type: list
+  default: "site-feedback,Give Feedback|staff,Discuss"
+  description: 
+    en: "category-slug,New Topic Button Text"
+

@@ -1,0 +1,14 @@
+{
+  "name": "Custom New Topic Text",
+  "component": true,
+  "license_url": null,
+  "about_url": "https://github.com/discourse/discourse-custom-new-topic-text",
+  "authors": "faizaan@discourse.org",
+  "theme_version": "1.0",
+  "minimum_discourse_version": "2.3.0",
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+  }
+}
