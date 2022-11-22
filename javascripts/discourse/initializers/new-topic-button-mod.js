@@ -31,9 +31,7 @@ const newTopicButton = (api) => {
         );
         let text = "";
         if (categorySlug && (text = categoryTexts[categorySlug])) {
-          // this.element doesn't work as this is a tagless component
-          const button = document.getElementById("create-topic");
-          button.getElementsByClassName("d-button-label")[0].innerHTML = text;
+          this.set("label", themePrefix(text));
         }
       }
     },
