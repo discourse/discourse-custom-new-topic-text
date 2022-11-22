@@ -1,10 +1,11 @@
 en: 
-  site_feedback: "Give Feedback"
+  webmethods_cloudstreams_connectors: "New Connector"
+  feedback: "Give Feedback"
   staff: "Discuss"
   knowledge_base: "New article"
-  webmethods_cloudstreams_connectors: "New Connector"
+  knowledge_base_blog: "New Blog"
+  knowledge_base_video: "New Video"
   theme_metadata: 
     description: This theme lets you change the `New Topic` button's text on category pages
     settings:
       newtopic_override_texts: "category-slug,theme_translation_key"
-  
