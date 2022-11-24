@@ -24,16 +24,38 @@ const newTopicButton = (api) => {
 
     didInsertElement() {
       this._super(...arguments);
+      this.setNewTopicButtonLabel();
+    },
 
-      if (this.router.get("currentRouteName") == "discovery.category") {
-        const categorySlug = this.router.get(
-          "currentRoute.attributes.category.slug"
+    setNewTopicButtonLabel() {
+      if (
+        ["discovery.category", "discovery.categoryNone"].includes(
+          this.router.get("currentRouteName")
+        )
+      ) {
+        let hierarchy = this.fetchCategoryHierarchy(
+          this.router.get("currentRoute.attributes.category")
         );
         let text = "";
+        let categorySlug = hierarchy
+          .map((c) => c.slug)
+          .reverse()
+          .join("/");
         if (categorySlug && (text = categoryTexts[categorySlug])) {
           this.set("label", themePrefix(text));
         }
       }
+    },
+
+    fetchCategoryHierarchy(category) {
+      const hierarchy = [category];
+      let catIter = category;
+      while (catIter.parentCategory) {
+        hierarchy.push(catIter.parentCategory);
+        catIter = catIter.parentCategory;
+      }
+
+      return hierarchy;
     },
   });
 };
