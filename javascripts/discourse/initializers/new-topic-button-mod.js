@@ -1,5 +1,5 @@
-import { withPluginApi } from "discourse/lib/plugin-api";
 import { getOwner } from "@ember/application";
+import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
   name: "custom-new-topic-text",
@@ -10,7 +10,9 @@ export default {
 
 const newTopicButton = (api) => {
   const overrideTexts = settings.newtopic_override_texts;
-  if (!overrideTexts.length) return;
+  if (!overrideTexts.length) {
+    return;
+  }
 
   const categoryTexts = {};
 
