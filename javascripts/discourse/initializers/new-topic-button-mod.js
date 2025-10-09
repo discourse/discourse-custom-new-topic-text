@@ -1,10 +1,10 @@
-import { getOwner } from "@ember/application";
+import { getOwner } from "@ember/owner";
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
   name: "custom-new-topic-text",
   initialize() {
-    withPluginApi("0.11.0", newTopicButton);
+    withPluginApi(newTopicButton);
   },
 };
 
